@@ -460,9 +460,9 @@ def display_in_box(static_text, variable_text):
     <style>
     .box {{
         border: 10px solid #3d8bc5;
-        padding: 10px;
+        padding: 6px;
         border-radius: 20px;
-        background-color: #c7c7c7;
+        background-color: #f9f9f9;
         color: #333;
     }}
     </style>

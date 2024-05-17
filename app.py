@@ -259,7 +259,9 @@ def build_trinomial_tree_cir(delta_t, T_length, r_0, alpha, beta, K, f, alpha_ci
     print('p_m',p_m)
     print('p_d',p_d)
 
-    x=[[element ** 2 for element in sublist] for sublist in y]
+
+
+    x=[[max(0,element) ** 2 for element in sublist] for sublist in y]
 
     cumsum_f = np.cumsum(f)
     cumsum_f = np.insert(cumsum_f, 0, 0)

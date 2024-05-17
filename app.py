@@ -633,6 +633,7 @@ with col2:
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         ax1.plot(alpha_cir_vals, prices, marker='o')
         ax1.plot(alpha_cir_vals[10], prices[10], marker='o', color='red', markersize=10)
+        ax1.set_ylim(0.02, 0.04)
         ax1.set_title('Price vs alpha')
         ax1.set_xlabel('alpha')
         ax1.set_ylabel('Price')

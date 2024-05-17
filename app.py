@@ -491,7 +491,7 @@ with col1:
     k_v_vals = np.arange(max(0,k_v-10*0.0005), k_v+10*0.0005, (k_v+10*0.0005-max(0,k_v-10*0.0005))/20)
     theta_v_vals = np.arange(max(0,theta_v-10*0.01), theta_v+10*0.01, (theta_v+10*0.01-max(0,theta_v-10*0.01))/20)
     sigma_v_vals = np.arange(max(0,sigma_v-10*0.005), sigma_v+10*0.005, (sigma_v+10*0.005-max(0,sigma_v-10*0.005))/20)
-    K_vals = np.arange(max(0,sigma_v-10*0.005), sigma_v-10*0.005, (sigma_v-10*0.005-max(0,sigma_v-10*0.005))/20)
+    K_vals = np.arange(max(0,K-10*0.005), K-10*0.005, (K-10*0.005-max(0,K-10*0.005))/20)
 
 
     # Input field for forward rate curve

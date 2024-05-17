@@ -206,7 +206,7 @@ def build_trinomial_tree_cir(delta_t, T_length, r_0, alpha, beta, K, f, alpha_ci
     T = np.arange(0, T_length + 1)
     V = sigma_cir/2*np.sqrt(delta_t)
     delta=np.sqrt(3)*V
-    y = [[r_0]] 
+    y = [[np.sqrt(r_0)]] 
     # Generate subsequent T[-1],
     for i in range(1, len(t)):
         # Number of nodes in the current layer: 1, 3, 5, 7, ...

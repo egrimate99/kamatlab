@@ -590,7 +590,7 @@ with col2:
     r_0 = st.number_input('r_0 ', value=0.05)
     alpha_cir = st.number_input('alpha', value=0.0048, step=0.001, format="%.4f")
     beta_cir = st.number_input('beta', value=0.10)
-    sigma_cir = st.number_input('sigma_cir', value=0.0548, step=0.001, format="%.4f")
+    sigma_cir = st.number_input('sigma_cir', value=0.0548, step=0.0001, format="%.4f")
     K = st.number_input('K ', value=0.049, step=0.005, format="%.3f")
     
     alpha = st.number_input('T_alpha ', value=2, step=1)

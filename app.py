@@ -262,7 +262,7 @@ def build_trinomial_tree_cir(delta_t, T_length, r_0, alpha, beta, K, f, alpha_ci
 
 
 
-    x=[[max(element,element) ** 2 for element in sublist] for sublist in y]
+    x=[[max(0,element) ** 2 for element in sublist] for sublist in y]
 
     cumsum_f = np.cumsum(f)
     cumsum_f = np.insert(cumsum_f, 0, 0)
@@ -603,7 +603,7 @@ with col2:
     # Convert K_range slider to a range of values
     alpha_cir_vals= np.arange(max(0,alpha_cir-10*0.0005), alpha_cir+10*0.0005, (alpha_cir+10*0.0005-max(0,alpha_cir-10*0.0005))/20)
     beta_cir_vals= np.arange(max(0,beta_cir-10*0.01), beta_cir+10*0.01, (beta_cir+10*0.01-max(0,beta_cir-10*0.01))/20)
-    sigma_cir_vals= np.arange(max(0,sigma_cir-10*0.005), sigma_cir+10*0.005, (sigma_cir+10*0.005-max(0,sigma_cir-10*0.005))/20)
+    sigma_cir_vals= np.arange(max(0,sigma_cir-10*0.0001), sigma_cir+10*0.0001, (sigma_cir+10*0.0001-max(0,sigma_cir-10*0.0001))/20)
 
     # Generate the time steps based on T and delta_t
 

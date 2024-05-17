@@ -619,7 +619,7 @@ with col2:
     if len(f) != len(t):
         st.error('The number of forward rates must match the length of time steps t.')
     else:
-        r, x, p_u, p_m, p_d, P, IRS, IRS_O, price = build_trinomial_tree_cir(delta_t, T_length, r_0, int(alpha), int(beta), K, f, k_v, theta_v, sigma_v)
+        r, x, p_u, p_m, p_d, P, IRS, IRS_O, price = build_trinomial_tree_cir(delta_t, T_length, r_0, int(alpha), int(beta), K, f, alpha_cir, beta_cir, sigma_cir)
         display_in_box('The price with the original parameters:', price)
         # Generate prices 1
         prices = np.zeros(len(alpha_cir_vals))

@@ -488,13 +488,10 @@ with col1:
     T_length = st.number_input('T length', value=7, step=1)
     delta_t = st.selectbox('delta_t', [1, 1/2, 1/3, 1/4], index=1)
 
-    # Convert K_range slider to a range of values
-    k_v_vals = np.arange(max(0,k_v-5*0.001), k_v+5*0.001, 0.001)
-    theta_v_vals = np.arange(0, 0.2, 0.02)
-    sigma_v_vals = np.arange(0, 0.05, 0.005)
-    K_vals = np.arange(0, 0.05, 0.005)
-
-    # Generate the time steps based on T and delta_t
+    k_v_vals = np.arange(max(0,k_v-10*0.0005), k_v+10*0.0005, (k_v+10*0.0005-max(0,k_v-10*0.0005))/20)
+    theta_v_vals = np.arange(max(0,theta_v-10*0.01), theta_v+10*0.01, (theta_v+10*0.01-max(0,theta_v-10*0.01))/20)
+    sigma_v_vals = np.arange(max(0,sigma_v-10*0.005), sigma_v+10*0.005, (sigma_v+10*0.005-max(0,sigma_v-10*0.005))/20)
+    K_vals = np.arange(max(0,sigma_v-10*0.005), sigma_v-10*0.005, (sigma_v-10*0.005-max(0,sigma_v-10*0.005))/20)
 
 
     # Input field for forward rate curve

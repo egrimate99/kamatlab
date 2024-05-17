@@ -598,10 +598,9 @@ with col2:
     delta_t = st.selectbox('delta_t ', [1, 1/2, 1/3, 1/4], index=1)
 
     # Convert K_range slider to a range of values
-    alpha_cir_vals= np.arange(0, 0.01, 0.001)
-    beta_cir_vals= np.arange(0, 0.2, 0.02)
-    sigma_cir_vals= np.arange(0, 0.01, 0.001)
-
+    alpha_cir_vals= np.arange(max(0,alpha_cir-10*0.0005), alpha_cir+10*0.0005, (alpha_cir+10*0.0005-max(0,alpha_cir-10*0.0005))/20)
+    beta_cir_vals= np.arange(max(0,beta_cir-10*0.01), beta_cir+10*0.01, (beta_cir+10*0.01-max(0,beta_cir-10*0.01))/20)
+    sigma_cir_vals= np.arange(max(0,sigma_v-10*0.005), sigma_v+10*0.005, (sigma_v+10*0.005-max(0,sigma_v-10*0.005))/20)
 
     # Generate the time steps based on T and delta_t
 
@@ -629,8 +628,9 @@ with col2:
         # Visualization
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         ax1.plot(alpha_cir_vals, prices, marker='o')
-        ax1.set_title('Price vs K')
-        ax1.set_xlabel('K')
+        ax1.plot(alpha_cir_vals[10], prices[10], marker='o', color='red', markersize=10)
+        ax1.set_title('Price vs alpha')
+        ax1.set_xlabel('alpha')
         ax1.set_ylabel('Price')
         ax1.grid(True)
         st.pyplot(fig1)
@@ -645,8 +645,9 @@ with col2:
         # Visualization
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         ax1.plot(beta_cir_vals, prices, marker='o')
-        ax1.set_title('Price vs theta')
-        ax1.set_xlabel('theta')
+        ax1.plot(beta_cir_vals[10], prices[10], marker='o', color='red', markersize=10)
+        ax1.set_title('Price vs beta')
+        ax1.set_xlabel('beta')
         ax1.set_ylabel('Price')
         ax1.grid(True)
         st.pyplot(fig1)
@@ -661,6 +662,7 @@ with col2:
         # Visualization
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         ax1.plot(sigma_cir_vals, prices, marker='o')
+        ax1.plot(sigma_cir_vals[10], prices[10], marker='o', color='red', markersize=10)
         ax1.set_title('Price vs sigma')
         ax1.set_xlabel('sigma')
         ax1.set_ylabel('Price')
@@ -677,6 +679,7 @@ with col2:
         # Visualization
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         ax1.plot(K_vals, prices, marker='o')
+        ax1.plot(K_vals[10], prices[10], marker='o', color='red', markersize=10)
         ax1.set_title('Price vs K')
         ax1.set_xlabel('K')
         ax1.set_ylabel('Price')

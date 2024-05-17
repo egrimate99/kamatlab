@@ -667,7 +667,7 @@ with col2:
         # Visualization
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         ax1.plot(sigma_cir_vals, prices, marker='o')
-        ax1.plot(sigma_cir_vals[10], prices[10], marker='o', color='red', markersize=10)
+        ax1.plot(sigma_cir_vals[5], prices[5], marker='o', color='red', markersize=10)
         ax1.set_title('Price vs sigma')
         ax1.set_xlabel('sigma')
         ax1.set_ylabel('Price')

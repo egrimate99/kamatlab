@@ -204,7 +204,7 @@ def build_trinomial_tree_cir(delta_t, T_length, r_0, alpha, beta, K, f, alpha_ci
     # Initialize the tree with the r_0 node
     t = np.arange(0, T_length + delta_t, delta_t)
     T = np.arange(0, T_length + 1)
-    V = sigma_cir/2
+    V = sigma_cir/2*np.sqrt(delta_t)
     delta=np.sqrt(3)*V
     x = [[r_0]] 
     # Generate subsequent T[-1],

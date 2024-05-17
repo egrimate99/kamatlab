@@ -603,7 +603,7 @@ with col2:
     # Convert K_range slider to a range of values
     alpha_cir_vals= np.arange(max(0,alpha_cir-10*0.0005), alpha_cir+10*0.0005, (alpha_cir+10*0.0005-max(0,alpha_cir-10*0.0005))/20)
     beta_cir_vals= np.arange(max(0,beta_cir-10*0.01), beta_cir+10*0.01, (beta_cir+10*0.01-max(0,beta_cir-10*0.01))/20)
-    sigma_cir_vals= np.arange(max(0,sigma_cir-10*0.001), sigma_cir+10*0.001, (sigma_cir+10*0.001-max(0,sigma_cir-10*0.001))/20)
+    sigma_cir_vals= np.arange(max(0,sigma_cir-10*0.005), sigma_cir+10*0.005, (sigma_cir+10*0.005-max(0,sigma_cir-10*0.005))/20)
 
     # Generate the time steps based on T and delta_t
 

@@ -521,7 +521,7 @@ with col1:
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         ax1.plot(k_v_vals, prices, marker='o')
         ax1.plot(k_v_vals[10], prices[10], marker='o', color='red', markersize=10)
-        ax1.set_ylim(0.02, 0.04)
+        # ax1.set_ylim(0.02, 0.04)
         ax1.set_title('Price vs k')
         ax1.set_xlabel('k')
         ax1.set_ylabel('Price')
@@ -604,7 +604,7 @@ with col2:
     # Convert K_range slider to a range of values
     alpha_cir_vals= np.arange(max(0,alpha_cir-10*0.0005), alpha_cir+10*0.0005, (alpha_cir+10*0.0005-max(0,alpha_cir-10*0.0005))/20)
     beta_cir_vals= np.arange(max(0,beta_cir-10*0.01), beta_cir+10*0.01, (beta_cir+10*0.01-max(0,beta_cir-10*0.01))/20)
-    sigma_cir_vals= np.arange(max(0,sigma_cir-10*0.0001), sigma_cir+10*0.0001, (sigma_cir+10*0.0001-max(0,sigma_cir-10*0.0001))/20)
+    sigma_cir_vals= np.arange(max(0,sigma_cir-5*0.0001), sigma_cir+15*0.0001, (sigma_cir+15*0.0001-max(0,sigma_cir-5*0.0001))/20)
 
     # Generate the time steps based on T and delta_t
 
@@ -633,7 +633,7 @@ with col2:
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         ax1.plot(alpha_cir_vals, prices, marker='o')
         ax1.plot(alpha_cir_vals[10], prices[10], marker='o', color='red', markersize=10)
-        ax1.set_ylim(0.02, 0.04)
+        # ax1.set_ylim(0.02, 0.04)
         ax1.set_title('Price vs alpha')
         ax1.set_xlabel('alpha')
         ax1.set_ylabel('Price')

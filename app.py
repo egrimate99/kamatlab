@@ -555,7 +555,7 @@ with col1:
         fig1, ax1 = plt.subplots(figsize=(10, 6))
         ax1.plot(sigma_v_vals, prices, marker='o')
         ax1.plot(sigma_v_vals[10], prices[10], marker='o', color='red', markersize=10)
-        ax1.ylim(0.02, 0.04)
+        ax1.set_ylim(0.02, 0.04)
         ax1.set_title('Price vs sigma')
         ax1.set_xlabel('sigma')
         ax1.set_ylabel('Price')

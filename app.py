@@ -206,7 +206,7 @@ def build_trinomial_tree_cir(delta_t, T_length, r_0, alpha, beta, K, f, alpha_ci
     T = np.arange(0, T_length + 1)
     V = sigma_cir/2*np.sqrt(delta_t)
     delta=np.sqrt(3)*V
-    x = [[r_0]] 
+    y = [[r_0]] 
     # Generate subsequent T[-1],
     for i in range(1, len(t)):
         # Number of nodes in the current layer: 1, 3, 5, 7, ...
@@ -219,17 +219,17 @@ def build_trinomial_tree_cir(delta_t, T_length, r_0, alpha, beta, K, f, alpha_ci
             # Calculate the position of each node
             pos = start_pos + j * delta
             current_layer.append(pos)
-        # Add the current layer to the x
-        x.append(current_layer)
+        # Add the current layer to the y
+        y.append(current_layer)
     M = []
     for i in range(0, len(t)):
         M_i = []
-        for j in range(len(x[i])):
-            M_ij = x[i][j]+((alpha_cir/2-sigma_cir**2/8)/x[i][j]-beta_cir/2*x[i][j])*delta_t
+        for j in range(len(y[i])):
+            M_ij = y[i][j]+((alpha_cir/2-sigma_cir**2/8)/y[i][j]-beta_cir/2*y[i][j])*delta_t
             M_i.append(M_ij)
         M.append(M_i)
     print('M',M)
-    print('x',x)
+    print('y',y)
     print('V',V)
     # print('p_u',p_u)
     # print('p_u',p_u)
@@ -246,9 +246,9 @@ def build_trinomial_tree_cir(delta_t, T_length, r_0, alpha, beta, K, f, alpha_ci
         start_pos = -(num_nodes - 1) * delta / 2 + r_0
         for j in range(num_nodes):
             k=j+1
-            p_u_pos =1/6+(M[i][j]-x[i+1][k])**2/(6*V**2)+(M[i][j]-x[i+1][k])/(2*np.sqrt(3)*V)
-            p_m_pos =2/3-(M[i][j]-x[i+1][k])**2/(3*V**2)
-            p_d_pos =1/6+(M[i][j]-x[i+1][k])**2/(6*V**2)-(M[i][j]-x[i+1][k])/(2*np.sqrt(3)*V)
+            p_u_pos =1/6+(M[i][j]-y[i+1][k])**2/(6*V**2)+(M[i][j]-y[i+1][k])/(2*np.sqrt(3)*V)
+            p_m_pos =2/3-(M[i][j]-y[i+1][k])**2/(3*V**2)
+            p_d_pos =1/6+(M[i][j]-y[i+1][k])**2/(6*V**2)-(M[i][j]-y[i+1][k])/(2*np.sqrt(3)*V)
             current_p_u.append(p_u_pos)
             current_p_m.append(p_m_pos)
             current_p_d.append(p_d_pos)
@@ -259,7 +259,7 @@ def build_trinomial_tree_cir(delta_t, T_length, r_0, alpha, beta, K, f, alpha_ci
     print('p_m',p_m)
     print('p_d',p_d)
 
-    x=[[element ** 2 for element in sublist] for sublist in x]
+    x=[[element ** 2 for element in sublist] for sublist in y]
 
     cumsum_f = np.cumsum(f)
     cumsum_f = np.insert(cumsum_f, 0, 0)

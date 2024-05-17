@@ -459,8 +459,8 @@ def display_in_box(static_text, variable_text):
     st.markdown(f"""
     <style>
     .box {{
-        border: 2px solid #4CAF50;
-        padding: 20px;
+        border: 5px solid #4CAF50;
+        padding: 10px;
         border-radius: 10px;
         background-color: #f9f9f9;
         color: #333;
